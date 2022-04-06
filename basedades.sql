@@ -1,5 +1,12 @@
 use mysql;
-create user 'root'@'localhost' identified by "Fjeclot22@";
-create database examen;
-use examen;
-grant all privileges on examen.* to 'admin'@'localhost';
+create user 'adcli'@'localhost' identified by "Daw2022@";
+create database bdcli;
+use bdcli;
+create table if not exists socis(id int primary key auto_increment not null, nom varchar(20) not null, cognoms varchar(50) not null, email varchar (50) not null);
+grant select,insert,delete, update on bdcli.socis to 'adcli'@'localhost';
+insert into socis (nom,cognoms,email) values("anna", "pérez pons", "app@gmail.com");
+insert into socis (nom,cognoms,email) values("joan", "ramírez rocamora", "joan.ramirez@fje.edu");
+insert into socis (nom,cognoms,email) values("pere", "masponts matadepera", "amasponts@protonamail.net");
+show tables;
+select * from socis;
+show grants for 'adcli'@'localhost';

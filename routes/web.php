@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/soci', function () {
+    return view('soci');
 });
+Route::resource('soci', ControladorSoci::class);
